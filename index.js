@@ -6,9 +6,9 @@ const news = require('./Data/news.json')
 
 const cors = require('cors')
 const app = express();
-const port = 3000
+const port = 5000
 
-
+app.use(cors())
 app.get('/news', (req, res)=> {
   res.send(news)
 })
@@ -25,7 +25,7 @@ app.get('/news/:id', (req, res)=>{
 app.get('/', (req, res)=> {
   res.send('dragon is running on the pitch')
 })
-app.use(cors())
+
 app.get('/categories', (req, res)=> {
   res.send(categories)
 })
